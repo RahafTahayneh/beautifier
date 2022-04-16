@@ -26,7 +26,7 @@ const Toolbar: React.FC<Props> = ({ formatted, onClickFormat, onSelectThemeOptio
                         case true:
                             return (
                                 <>
-                                    <button data-tip data-for="removeFormat" onClick={onClickFormat} className="toolbar-btn" disabled={!formatted}>
+                                    <button data-tip data-for="removeFormat" onClick={onClickFormat} className="toolbar-btn">
                                         <FontAwesomeIcon icon={faClockRotateLeft} className="toolbar-btn-icon"/>
                                     </button>
                                     <ReactTooltip id="removeFormat" place="bottom" effect="solid">
@@ -38,7 +38,7 @@ const Toolbar: React.FC<Props> = ({ formatted, onClickFormat, onSelectThemeOptio
                         case false:
                             return (
                                 <>
-                                    <button data-tip data-for="formatCode" onClick={onClickFormat} className="toolbar-btn" disabled={formatted || !code}>
+                                    <button data-tip data-for="formatCode" onClick={onClickFormat} className="toolbar-btn" disabled={!code}>
                                         <FontAwesomeIcon icon={faCirclePlay} className="toolbar-btn-icon" />
                                     </button>
                                     <ReactTooltip id="formatCode" place="top" effect="solid">
