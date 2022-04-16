@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+<h1 align="center">Beautifier✨️</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"><img src="public/beautifier.gif" alt="Beautifier gif" width="550" /></p>
 
-## Available Scripts
+<p align="center">
+    <a href="https://beautifier-code.vercel.app/" target="blank">View Demo</a>
+    ·
+    <a href="https://github.com/RahafTahayneh/beautifier/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/RahafTahayneh/beautifier/issues/new/choose">Request Feature</a>
+</p>
 
-In the project directory, you can run:
+### Introducing Beautifier ✌️
 
-### `npm start`
+Beautifier is a simple powerful and useful ES6 Editor, Previwer and Formatter with multiple themes to select what you like, its built with React and CodeMirror.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Demo
 
-### `npm test`
+Try the App: [Beautifier](https://beautifier-code.vercel.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🧐 Features
 
-### `npm run build`
+- 🍭 **Easily Formatting, Remove Code Formatting**
+- 🌱 **Multiple Themes**
+- 💻 **Fully Responsive**
+- 🚀 **Fast Formatting**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Installation Steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/RahafTahayneh/beautifier.git
+```
 
-### `npm run eject`
+2. Change the working directory
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+cd beautifier
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+- For any installation issue, try npm install --legacy-peer-deps 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
 
-## Learn More
+4. Run the app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
+
+
+## 💻 Built with
+
+- [ReactJS](https://reactjs.org/)
+- [CodeMirror](https://codemirror.net/): for code editting and customizing
+- [React-CodeMirror](https://www.npmjs.com/package/react-codemirror2): A tiny react codemirror component wrapper.
+- [Font-Awesome](https://fontawesome.com/): for icons
+
+## 🌈 What's next
+
+- Support multiple languages
+- History for the formatted code
+- Read only mode
+- Drag Drop Code
+
+## 🦄 Deploy
+
+<a href="https://vercel.com/new/project?template=https://github.com/RahafTahayneh/beautifier">
+<img src="https://vercel.com/button" height="37.5px" />
+</a>
+
