@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/addon/edit/matchbrackets';
 import 'codemirror/lib/codemirror.css';
@@ -8,19 +8,23 @@ import { CodeEditor, CodeFormatter, Header, Toolbar } from "../../components";
 import useMain from "./useMain";
 
 import "./styles.scss";
-import "./themes/myTheme.css";
+
+// Themes
+import "./themes/default.css";
+import "./themes/ambiance.css";
+import "./themes/cobalt.css"
 
 
 const Main = () => {
-    const { setValue, value, showFormatted, formatCode } = useMain();
+    const { setValue, value, showFormatted, formatCode, themeOption, setThemeOption } = useMain();
 
     const renderUnformattedCode = () => {
         return (
             <CodeEditor onChange={(e) => setValue(e.target.value)} value={value}/>
         )
     };
-
-    const renderFormattedCode = () => {
+    
+    const renderFormattedCode = useCallback(() => {
         return (
             <CodeFormatter
                 onChange={(editor, data, value) => setValue(value)}
@@ -30,11 +34,11 @@ const Main = () => {
                     lineWrapping: true,
                     mode: 'javascript',
                     tabSize: 2,
-                    theme: 'myTheme'
+                    theme: themeOption?.value
                 }}
             />
         )
-    };
+    }, [value, themeOption, setValue]);
 
     return (
         <div className="main">
@@ -43,7 +47,7 @@ const Main = () => {
                     <Header/>
                 </div>
                 <div>
-                    <Toolbar formatted={showFormatted} onClickFormat={formatCode}/>
+                    <Toolbar formatted={showFormatted} onClickFormat={formatCode} onSelectThemeOption={(arg) => setThemeOption(arg)} selectedThemeOption={themeOption}  />
                 </div>
                 <div className="main-instructions">
                     <pre>

@@ -1,15 +1,21 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCirclePlay, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons';
+import { Select } from "../Select";
+
 import "./styles.scss";
+import { OptionType } from "../../bl/themeOption";
+import { THEME_OPTIONS } from "../../pages/Main/constants";
 
 interface Props {
     formatted: boolean,
-    onClickFormat: () => void
+    onClickFormat: () => void,
+    onSelectThemeOption: (arg: OptionType) => void,
+    selectedThemeOption: OptionType
 }
 
-const Toolbar: React.FC<Props> = ({ formatted, onClickFormat }) => {
+const Toolbar: React.FC<Props> = ({ formatted, onClickFormat, onSelectThemeOption, selectedThemeOption }) => {
     return (
         <div className="toolbar">
             <div>
@@ -43,7 +49,14 @@ const Toolbar: React.FC<Props> = ({ formatted, onClickFormat }) => {
                 })()
             }
             </div>
-
+            <div>
+                <Select
+                    onChangeOption={onSelectThemeOption}
+                    selectedOption={selectedThemeOption}
+                    disabled={!formatted}
+                    options={THEME_OPTIONS}
+                />
+            </div>
         </div>
     )
 }

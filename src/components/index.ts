@@ -3,3 +3,4 @@ export { Toolbar } from "./Toolbar";
 export { CodeFormatter } from "./CodeFormatter";
 export { CodeEditor } from "./CodeEditor";
 export { TextArea } from "./TextArea";
+export { Select } from "./Select";

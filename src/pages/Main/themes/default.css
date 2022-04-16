@@ -3,25 +3,25 @@
 */
 
 /* e.g. var, function */
-.cm-keyword    { color: #000; font-weight: bold }
+.cm-s-default span.cm-keyword    { color: #000 ; font-weight: bold !important; }
 
 /* e.g. #id */
 .cm-atom       { color: #ddca7e; }
 
 /* e.g. 20 */
-.cm-number     { color: red; }
+.cm-s-default span.cm-number     { color: red; }
 
 /* e.g. px, em */
 .cm-unit       { color: #d0782a; }
 
 /* e.g. @include, [this] */
-.cm-def        { color: blue; font-weight: bold }
+.cm-s-default span.cm-def        { color: blue; font-weight: bold }
 
 /* e.g. $, i */
-.cm-variable   { color: black; }
+.cm-s-default span.cm-variable   { color: black; }
 
 /* e.g. for key in [this], Markdown li */
-.cm-variable-2 { color: blue; font-weight: bold }
+.cm-s-default span.cm-variable-2 { color: blue; font-weight: 600 }
 
 /* e.g. getElementbyId, CSS properties */
 .cm-property   { color: black; }
@@ -36,7 +36,7 @@
 .cm-string     { color: #96b38a; }
 
 /* e.g. some CSS values */
-.cm-string-2   { color: forestgreen; }
+.cm-s-default span.cm-string-2   { color: forestgreen; }
 
 /* e.g. @font-face */
 .cm-meta       { color: #9a8297; }
@@ -70,7 +70,7 @@
 /* e.g. h1, h2 */
 .box-css .cm-tag { color: #ddca7e; }
 
-.CodeMirror {
+.cm-s-default .CodeMirror {
     background-color: white;
 }
 
@@ -78,6 +78,6 @@
     color: #343434;
 }
 
-.CodeMirror-lines {
+.cm-s-default .CodeMirror-lines {
     padding-top: 12px;
 }
