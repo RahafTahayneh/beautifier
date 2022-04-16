@@ -14,8 +14,13 @@
     border: solid 1px white;
     padding: 8px;
     border-radius: 20px;
+
     &:hover {
      background-color: #1d1d1d;
+    }
+
+    &:disabled {
+      background-color: gray !important;
     }
 
     &-icon {

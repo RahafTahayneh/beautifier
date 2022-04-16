@@ -34,7 +34,8 @@ const Main = () => {
                     lineWrapping: true,
                     mode: 'javascript',
                     tabSize: 2,
-                    theme: themeOption?.value
+                    theme: themeOption?.value,
+                    readOnly: true
                 }}
             />
         )
@@ -47,7 +48,7 @@ const Main = () => {
                     <Header/>
                 </div>
                 <div>
-                    <Toolbar formatted={showFormatted} onClickFormat={formatCode} onSelectThemeOption={(arg) => setThemeOption(arg)} selectedThemeOption={themeOption}  />
+                    <Toolbar formatted={showFormatted} onClickFormat={formatCode} onSelectThemeOption={(arg) => setThemeOption(arg)} selectedThemeOption={themeOption} code={value} />
                 </div>
                 <div className="main-instructions">
                     <pre>
