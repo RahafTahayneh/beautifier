@@ -1,9 +1,9 @@
 <h1 align="center">Beautifier✨️</h1>
 
-<p align="center"><img src="public/beautifier.gif" alt="Propic gif" width="550" /></p>
+<p align="center"><img src="public/beautifier.gif" alt="Beautifier gif" width="550" /></p>
 
 <p align="center">
-    <a href="https://propic-world.vercel.app/" target="blank">View Demo</a>
+    <a href="https://beautifier-code.vercel.app/" target="blank">View Demo</a>
     ·
     <a href="https://github.com/RahafTahayneh/beautifier/issues/new/choose">Report Bug</a>
     ·
@@ -17,7 +17,7 @@ Beautifier is a simple powerful and useful ES6 Editor, Previwer and Formatter wi
 
 ## 🚀 Demo
 
-Try the App: [Beautifier](https://propic-world.vercel.app/)
+Try the App: [Beautifier](https://beautifier-code.vercel.app/)
 
 ## 🧐 Features
 
