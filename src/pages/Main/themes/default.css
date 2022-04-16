@@ -33,7 +33,7 @@
 .cm-comment    { color: #666666; }
 
 /* e.g. "string" */
-.cm-string     { color: #96b38a; }
+.cm-s-default .cm-string     { color: forestgreen; }
 
 /* e.g. some CSS values */
 .cm-s-default span.cm-string-2   { color: forestgreen; }
