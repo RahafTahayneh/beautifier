@@ -21,7 +21,7 @@
 .cm-s-default span.cm-variable   { color: black; }
 
 /* e.g. for key in [this], Markdown li */
-.cm-s-default span.cm-variable-2 { color: blue; font-weight: 600 }
+.cm-s-default span.cm-variable-2 { color: blue; font-weight: bold }
 
 /* e.g. getElementbyId, CSS properties */
 .cm-property   { color: black; }
