@@ -1,0 +1,25 @@
+.toolbar {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 8px;
+
+  &-btn {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+    border: solid 1px white;
+    padding: 8px;
+    border-radius: 20px;
+    &:hover {
+     background-color: #1d1d1d;
+    }
+
+    &-icon {
+      font-size: 18px;
+    }
+  }
+}

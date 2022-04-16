@@ -1,0 +1,10 @@
+.app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-image: url("./assets/star-bg.svg"), linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    background-size: 100%;
+}

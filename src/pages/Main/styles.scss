@@ -1,0 +1,24 @@
+.main {
+  width: 100%;
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1224px;
+    width: 94%;
+    margin: auto;
+    height: 600px;
+    border-radius: 20px;
+    background-color: rgba(112,128,144, 0.6);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+
+  &-instructions {
+    font-size: 14px;
+    padding: 12px;
+    color: whitesmoke;
+    font-weight: 700;
+    line-height: 1.67;
+  }
+}
