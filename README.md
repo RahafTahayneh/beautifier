@@ -21,7 +21,7 @@ Try the App: [Beautifier](https://beautifier-code.vercel.app/)
 
 ## 🧐 Features
 
-- 🍭 **Easily Formatting, Remove Code Formatting** (text, color, size, family, weight, lineheight etc)
+- 🍭 **Easily Formatting, Remove Code Formatting**
 - 🌱 **Multiple Themes**
 - 💻 **Fully Responsive**
 - 🚀 **Fast Formatting**
