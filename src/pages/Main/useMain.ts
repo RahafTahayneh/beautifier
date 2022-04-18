@@ -1,15 +1,22 @@
-import { useState } from "react";
-import { OptionType } from "../../bl/themeOption";
+import {ChangeEvent, useState} from "react";
 import { THEME_OPTIONS } from "./constants";
+import { ThemeOption } from "../../bl/themeOption";
 
 const useMain = () => {
     const [showFormatted, setShowFormatted] = useState(false);
-    const [value, setValue] = useState<string>(`for (let i = 1; i <= 10; i++) { \n \t console.log(\`Pass number \${i}\`); \n}`);
-    const[themeOption, setThemeOption] = useState<OptionType>(THEME_OPTIONS[0]);
+    const [value, setValue] = useState<string>(`//Hello all \n for (let i = 1; i <= 10; i++) { \n console.log(\`Pass number \${i}\`); \n}`);
+    const[themeOption, setThemeOption] = useState<ThemeOption>(THEME_OPTIONS[0]);
 
     const formatCode = () => {
         setShowFormatted(prev => !prev);
     };
+
+    const onSelectTheme = (e: ChangeEvent<HTMLSelectElement>) => {
+        e.preventDefault()
+        setThemeOption({
+            value: e.target.value
+        })
+    }
 
     return {
         showFormatted,
@@ -17,7 +24,7 @@ const useMain = () => {
         setValue,
         formatCode,
         themeOption,
-        setThemeOption
+        onSelectTheme
     }
 }
 

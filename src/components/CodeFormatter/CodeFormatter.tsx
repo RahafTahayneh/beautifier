@@ -1,29 +1,23 @@
 import React from 'react';
-import {
-    EditorConfiguration,
-    Editor,
-    EditorChange,
-} from 'codemirror';
-import { Controlled as CodeMirror } from "react-codemirror2";
+
+import "./styles.css";
+import useCodeFormatter from "./useCodeFormatter";
 
 interface CodeMirrorProps {
-    onChange: (editor: Editor, data: EditorChange, value: string) => void;
-    onCursorActivity?: (EditorFromTextArea: Editor) => void;
-    options?: EditorConfiguration;
     value?: string;
+    selectedTheme ?: string
 };
 
-const CodeFormatter: React.FC<CodeMirrorProps> = (props) => {
-    const {
-        options,
-        onChange,
-        value = '',
-    } = props;
-
+const CodeFormatter: React.FC<CodeMirrorProps> = ({ value, selectedTheme }) => {
+    const { result } = useCodeFormatter(value)
     return (
-       <CodeMirror onBeforeChange={onChange} value={value} options={options} />
+        <div className={`editor ${selectedTheme}`}>
+            {
+                result.map((ele, index) =>
+                    <span key={index} className={ele?.className}>{ele.word}</span>)
+            }
+        </div>
     );
-
 }
 
 export default CodeFormatter

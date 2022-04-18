@@ -1,7 +1,8 @@
 .main {
   width: 100%;
+}
 
-  &-wrapper {
+.wrapper {
     display: flex;
     flex-direction: column;
     max-width: 1224px;
@@ -12,13 +13,34 @@
     background-color: rgba(112,128,144, 0.6);
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
     overflow: hidden;
-  }
+}
 
-  &-instructions {
+.instructions {
     font-size: 14px;
     padding: 12px;
     color: whitesmoke;
     font-weight: 700;
     line-height: 1.67;
-  }
+}
+
+.keyword {
+  color: black;
+  font-weight: bold;
+}
+
+.number {
+  color: red
+}
+
+.variable {
+  color: blue;
+  font-weight: bold;
+}
+
+.operator {
+  color: black;
+}
+
+.string {
+  color: forestgreen;
 }

@@ -1,17 +1,17 @@
 import React from "react";
-import "./styles.scss";
+import "./styles.css";
 import logo from "../../assets/logo.svg";
 
 const Header = () => {
     return (
         <div className="header">
-            <div className="header-title">
-                <span><img alt="logo" src={logo} />Yembo Beautifier</span>
+            <div >
+                <span className="title_span"><img alt="logo" src={logo} className="title_img"/>Yembo Beautifier</span>
             </div>
-            <div className="header-icons">
-                <div className="header-icon red"/>
-                <div className="header-icon yellow"/>
-                <div className="header-icon green"/>
+            <div className="icons">
+                <div className="icon red"/>
+                <div className="icon yellow"/>
+                <div className="icon green"/>
             </div>
         </div>
     )

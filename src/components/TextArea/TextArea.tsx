@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.scss"
+import "./styles.css"
 import useTextArea from "./useTextArea";
 
 interface Props {
@@ -18,7 +18,7 @@ const TextArea: React.FC<Props> = ({ onChange, value}) => {
             }}
         >
 			<textarea
-                className="text-editor"
+                className="text_editor"
                 value={text}
                 ref={textAreaRef}
                 rows={1}

@@ -1,19 +1,17 @@
-import React from "react";
-import ReactTooltip from "react-tooltip";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons';
+import React, { ChangeEvent } from "react";
 import { Select } from "../Select";
 
-import "./styles.scss";
-import { OptionType } from "../../bl/themeOption";
+import "./styles.css";
+import { ThemeOption } from "../../bl/themeOption";
 import { THEME_OPTIONS } from "../../pages/Main/constants";
+import { Play, Replay  } from "../../icons";
 
 interface Props {
     code?: string,
     formatted: boolean,
     onClickFormat: () => void,
-    onSelectThemeOption: (arg: OptionType) => void,
-    selectedThemeOption: OptionType
+    onSelectThemeOption: (arg: ChangeEvent<HTMLSelectElement>) => void,
+    selectedThemeOption: ThemeOption
 }
 
 const Toolbar: React.FC<Props> = ({ formatted, onClickFormat, onSelectThemeOption, selectedThemeOption, code }) => {
@@ -26,24 +24,20 @@ const Toolbar: React.FC<Props> = ({ formatted, onClickFormat, onSelectThemeOptio
                         case true:
                             return (
                                 <>
-                                    <button data-tip data-for="removeFormat" onClick={onClickFormat} className="toolbar-btn">
-                                        <FontAwesomeIcon icon={faClockRotateLeft} className="toolbar-btn-icon"/>
+                                    <button onClick={onClickFormat} className="btn">
+                                        <Replay className="icon"/>
+                                        <span className="tooltip"> Remove Formatting </span>
                                     </button>
-                                    <ReactTooltip id="removeFormat" place="bottom" effect="solid">
-                                        Remove Formatting
-                                    </ReactTooltip>
                                 </>
 
                             )
                         case false:
                             return (
                                 <>
-                                    <button data-tip data-for="formatCode" onClick={onClickFormat} className="toolbar-btn" disabled={!code}>
-                                        <FontAwesomeIcon icon={faCirclePlay} className="toolbar-btn-icon" />
+                                    <button onClick={onClickFormat} className="btn" disabled={!code}>
+                                        <Play className="icon" />
+                                        <span className="tooltip"> Format Code </span>
                                     </button>
-                                    <ReactTooltip id="formatCode" place="top" effect="solid">
-                                        Format Code
-                                    </ReactTooltip>
                                 </>
                             )
                     }

@@ -1,0 +1,72 @@
+.editor {
+  max-width: 100%;
+  color: black;
+  line-height: 1.76;
+  padding: 20px;
+  width: 100%;
+  border: solid 1.5px whitesmoke;
+  max-height: 300px;
+  font-size: 12px;
+  overflow: auto;
+}
+
+.default {
+  background-color: white;
+  color: black;
+}
+.default .string {
+  color: forestgreen;
+}
+
+.default .keyword {
+    font-weight: bold;
+}
+
+.default .variable {
+  font-weight: bold;
+  color: blue;
+}
+
+.default .number {
+  color: red;
+}
+
+
+.ambiance {
+  background-color: black;
+  color: #aac6e3;
+}
+.ambiance .string {
+    color: orangered;
+}
+.ambiance .keyword {
+    font-weight: bold;
+    color: #9B859D;
+}
+.ambiance .variable {
+    font-weight: bold;
+    color: turquoise;
+}
+.ambiance .number {
+    color: wheat;
+}
+
+.cobalt {
+  background: #002240;
+  color: white;
+}
+
+.cobalt .string {
+    color: #845dc4;
+}
+.cobalt .keyword {
+    font-weight: bold;
+    color: #b36539;
+}
+.cobalt .variable {
+    font-weight: bold;
+    color: #ff9d00;
+}
+.cobalt .number {
+    color: #ffee80;
+}
