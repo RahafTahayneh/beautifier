@@ -5,7 +5,6 @@ import {
     isComment,
     isNumeric,
     isOperatorChar,
-    specialWord
 } from "./utils";
 import { CodeKeywords } from "../../bl/CodeFormatter";
 import { QUOTES } from "../../bl/CodeFormatter/constants";
@@ -98,30 +97,19 @@ const useCodeFormatter = (value?:string) => {
                                     if (!!word) {
                                         const copiedWord = word;
                                         word = ""
-                                        // for consoling methods
-                                        if (specialWord.includes(copiedWord)) {
+                                        if(declaredVariables.includes(copiedWord) || checkIfItsBeenDeclared(splitLines[i], copiedWord)) {
                                             setResults(prevState => [
                                                 ...prevState,
                                                 {
                                                     word: copiedWord,
+                                                    className: "variable"
 
                                                 }
                                             ])
+                                            if(!declaredVariables.includes(copiedWord)){
+                                                    declaredVariables.push(copiedWord)
+                                            }
                                         } else {
-                                            // variables
-                                            if(declaredVariables.includes(copiedWord) || checkIfItsBeenDeclared(splitLines[i], copiedWord)) {
-                                                setResults(prevState => [
-                                                    ...prevState,
-                                                    {
-                                                        word: copiedWord,
-                                                        className: "variable"
-
-                                                    }
-                                                ])
-                                                if(!declaredVariables.includes(copiedWord)){
-                                                        declaredVariables.push(copiedWord)
-                                                }
-                                            } else {
                                                 setResults(prevState => [
                                                     ...prevState,
                                                     {
@@ -131,7 +119,6 @@ const useCodeFormatter = (value?:string) => {
                                                 ])
                                             }
                                         }
-                                    }
                                 }
                                 if (!isOperatorChar(ch)) {
                                     // for spacing
@@ -154,7 +141,7 @@ const useCodeFormatter = (value?:string) => {
                                 }
                                 word = ""
                                 index++;
-                            } else if (ch === "\"" || ch === "`" || ch === "'") {
+                            } else if (ch === "`") {
                                 const allString = values.slice(index, values.lastIndexOf(QUOTES[ch]) + 1);
                                 if (ch === "`" && allString.indexOf("${")) {
                                     const vars = (allString.split(" ") || [])
@@ -172,7 +159,7 @@ const useCodeFormatter = (value?:string) => {
                                                 },
                                                 {
                                                     word: variable,
-                                                    className: declaredVariables.includes(variable) ? "variable": "",
+                                                    className: declaredVariables.includes(variable) ? "variable": isNumeric(variable)? "number": "",
                                                 },
                                                 {
                                                     word: vars[j].slice(endIndex, vars[j].length),
