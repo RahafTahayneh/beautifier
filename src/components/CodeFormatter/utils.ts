@@ -2,6 +2,22 @@ import { specialOperator } from "../../bl/CodeFormatter/constants";
 
 export const specialWord = ["console.log", "console.error", "log", "JSON.stringify"]
 
+
+const DeclarationKeyWords = ["const", "let", "var"]
+
+/**
+ * Check if the word is variable "declared"
+ * @param {string} arg1
+ * @param {string} arg2
+ * @return {boolean}
+ */
+export const checkIfItsBeenDeclared =  (lines:string, word:string) : boolean=> {
+    const words = lines.split(/[!@#$%^&*()_+\-=[\]{};:\\|,<>/?~ ]/)
+    const indexOfWord = words.indexOf(word)
+    const declarationKeyWord = words[indexOfWord-1] ?? ''
+    return DeclarationKeyWords.includes(declarationKeyWord)
+};
+
 /**
  * Check if the character is an operator
  * @param {string} arg1

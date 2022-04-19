@@ -1,5 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import {checkIfItsSpecialCharacter, isComment, isNumeric, isOperatorChar, specialWord} from "./utils";
+import {
+    checkIfItsBeenDeclared,
+    checkIfItsSpecialCharacter,
+    isComment,
+    isNumeric,
+    isOperatorChar,
+    specialWord
+} from "./utils";
 import { CodeKeywords } from "../../bl/CodeFormatter";
 import { QUOTES } from "../../bl/CodeFormatter/constants";
 
@@ -15,7 +22,7 @@ const useCodeFormatter = (value?:string) => {
         try{
             if(!!value) {
                 const clonedValue = value;
-
+                const declaredVariables: string[] = [];
                 // Split the entered code by lines
                 const splitLines = clonedValue.split(/\r?\n/);
 
@@ -41,12 +48,12 @@ const useCodeFormatter = (value?:string) => {
                                 // its a keyword
                                 // @ts-ignore
                                 if (Object.values(CodeKeywords).includes(word)) {
-                                    const n = word;
+                                    const copiedWord = word;
                                     word = ""
                                     setResults(prevState => [
                                         ...prevState,
                                         {
-                                            word: n,
+                                            word: copiedWord,
                                             className: "keyword"
 
                                         }
@@ -54,12 +61,12 @@ const useCodeFormatter = (value?:string) => {
                                 }
                                 // Its a number
                                 else if (isNumeric(word)) {
-                                    const n = word;
+                                    const copiedWord = word;
                                     word = "";
                                     setResults(prevState => [
                                         ...prevState,
                                         {
-                                            word: n,
+                                            word: copiedWord,
                                             className: "number"
 
                                         }
@@ -69,13 +76,13 @@ const useCodeFormatter = (value?:string) => {
                                 else if (isOperatorChar(ch)) {
                                     //This check in case we have an operator contacted with operator
                                     if(!!word){
-                                        const n =word;
+                                        const copiedWord =word;
                                         word=""
                                         setResults(prevState => [
                                             ...prevState,
                                             {
-                                                word: n,
-                                                className: "variable"
+                                                word: copiedWord,
+                                                className: declaredVariables.includes(copiedWord)? "variable" :""
 
                                             }
                                         ])
@@ -89,27 +96,40 @@ const useCodeFormatter = (value?:string) => {
                                     ])
                                 } else {
                                     if (!!word) {
-                                        const n = word;
+                                        const copiedWord = word;
                                         word = ""
                                         // for consoling methods
-                                        if (specialWord.includes(n)) {
+                                        if (specialWord.includes(copiedWord)) {
                                             setResults(prevState => [
                                                 ...prevState,
                                                 {
-                                                    word: n,
+                                                    word: copiedWord,
 
                                                 }
                                             ])
                                         } else {
                                             // variables
-                                            setResults(prevState => [
-                                                ...prevState,
-                                                {
-                                                    word: n,
-                                                    className: "variable"
+                                            if(declaredVariables.includes(copiedWord) || checkIfItsBeenDeclared(splitLines[i], copiedWord)) {
+                                                setResults(prevState => [
+                                                    ...prevState,
+                                                    {
+                                                        word: copiedWord,
+                                                        className: "variable"
 
+                                                    }
+                                                ])
+                                                if(!declaredVariables.includes(copiedWord)){
+                                                        declaredVariables.push(copiedWord)
                                                 }
-                                            ])
+                                            } else {
+                                                setResults(prevState => [
+                                                    ...prevState,
+                                                    {
+                                                        word: copiedWord,
+
+                                                    }
+                                                ])
+                                            }
                                         }
                                     }
                                 }
@@ -152,7 +172,7 @@ const useCodeFormatter = (value?:string) => {
                                                 },
                                                 {
                                                     word: variable,
-                                                    className: "variable",
+                                                    className: declaredVariables.includes(variable) ? "variable": "",
                                                 },
                                                 {
                                                     word: vars[j].slice(endIndex, vars[j].length),
