@@ -12,8 +12,7 @@
 
 ### Introducing Beautifier ✌️
 
-Beautifier is a simple powerful and useful ES6 Editor, Previwer and Formatter with multiple themes to select what you like, its built with React and CodeMirror.
-
+Beautifier is a simple powerful and useful ES6 Editor, Previwer and Formatter with multiple themes to select what you like, its built with ReactJs
 
 ## 🚀 Demo
 
@@ -44,7 +43,6 @@ cd beautifier
 
 ```bash
 npm install
-- For any installation issue, try npm install --legacy-peer-deps 
 
 ```
 
@@ -60,15 +58,11 @@ You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
 ## 💻 Built with
 
 - [ReactJS](https://reactjs.org/)
-- [CodeMirror](https://codemirror.net/): for code editting and customizing
-- [React-CodeMirror](https://www.npmjs.com/package/react-codemirror2): A tiny react codemirror component wrapper.
-- [Font-Awesome](https://fontawesome.com/): for icons
 
 ## 🌈 What's next
 
 - Support multiple languages
 - History for the formatted code
-- Read only mode
 - Drag Drop Code
 
 ## 🦄 Deploy
