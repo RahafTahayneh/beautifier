@@ -141,7 +141,7 @@ const useCodeFormatter = (value?:string) => {
                                 }
                                 word = ""
                                 index++;
-                            } else if (ch === "`") {
+                            } else if (ch === "\"" || ch === "`" || ch === "'") {
                                 const allString = values.slice(index, values.lastIndexOf(QUOTES[ch]) + 1);
                                 if (ch === "`" && allString.indexOf("${")) {
                                     const vars = (allString.split(" ") || [])
